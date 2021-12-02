@@ -1,5 +1,6 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
+  <div>国际化：{{ $t(`message.Home`) }}</div>
   <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
 </template>
 
@@ -12,6 +13,7 @@ export default defineComponent({
   components: {
     HelloWorld,
   },
+  setup() {},
 });
 </script>
 
