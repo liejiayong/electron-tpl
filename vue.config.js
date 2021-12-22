@@ -2,6 +2,7 @@ const Components = require('unplugin-vue-components/webpack');
 const { ElementPlusResolver } = require('unplugin-vue-components/resolvers');
 
 module.exports = {
+  // runtimeCompiler: true /* 解决App出现白屏，没有出现vue的页面 */
   pluginOptions: {
     electronBuilder: {
       nodeIntegration: true /* 开启electron的node支持 */,
