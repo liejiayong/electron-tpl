@@ -1,8 +1,9 @@
 'use strict';
 
-import { app, protocol, BrowserWindow } from 'electron';
+import { app, protocol, BrowserWindow, session } from 'electron';
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib';
 import installExtension, { VUEJS3_DEVTOOLS } from 'electron-devtools-installer';
+import path from 'path';
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
 // Scheme must be registered before the app is ready
@@ -54,8 +55,9 @@ app.on('ready', async () => {
   if (isDevelopment && !process.env.IS_TEST) {
     // Install Vue Devtools
     try {
-      // await installExtension(VUEJS3_DEVTOOLS);
-      require('vue-devtools').install();
+      // await installExtension(VUEJS3_DEVTOOLS);/* 科学上网 */
+      // require('vue-devtools').install();
+      require('../plugins/devtools.js').install();
     } catch (e) {
       console.error('Vue Devtools failed to install:', e.toString());
     }
