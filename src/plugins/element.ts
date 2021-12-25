@@ -14,7 +14,7 @@ import { ElIcon, ElButton, ElDropdown, ElDropdownItem, ElDropdownMenu } from 'el
  */
 export default function loadComponents(app: any) {
   /* icon components */
-  for (let iconName in ElIconAll) {
+  for (const iconName in ElIconAll) {
     app.component(iconName, ElIconAll[iconName]);
   }
 

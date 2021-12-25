@@ -1,10 +1,9 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <div>国际化：{{ $t(`message.Home`) }}</div>
-  <SelectI18n></SelectI18n>
-  <el-button type="primary" :loading="true">Loading</el-button>
+  <div class="app-container">
+    <Main></Main>
+  </div>
 </template>
 
 <script setup lang="ts">
-import SelectI18n from '@/components/select/i18n.vue';
+import Main from '@/Layouts/Main/index.vue';
 </script>

@@ -1,5 +1,3 @@
-const layout = [
-    { path: '/', component:  { template: '<div>Home</div>' } },
-]
+const layout = [{ path: '/', component: { template: '<div>Home</div>' } }];
 
-export default [...layout]
+export default [...layout];

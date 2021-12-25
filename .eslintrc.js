@@ -9,5 +9,9 @@ module.exports = {
     // ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
     // sourceType: 'module', // Allows for the use of imports
   },
-  rules: {},
+  rules: {
+    // https://eslint.vuejs.org/user-guide/#faq
+    // Enable vue/script-setup-uses-vars rule
+    'vue/script-setup-uses-vars': 'error',
+  },
 };
