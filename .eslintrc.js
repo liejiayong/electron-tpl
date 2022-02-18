@@ -10,8 +10,8 @@ module.exports = {
     'vue-global-api',
     '@vue/typescript/recommended',
 
-    '@vue/prettier/@typescript-eslint',
-    '@vue/prettier',
+    // '@vue/prettier/@typescript-eslint',
+    // '@vue/prettier',
   ],
   parserOptions: {
     parser: '@typescript-eslint/parser',

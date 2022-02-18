@@ -1,7 +1,1 @@
-<script>
-export default {
-  render(h) {
-    return h('router-view');
-  },
-};
-</script>
+<template><router-view></router-view></template>

@@ -1,9 +1,8 @@
 <template>
   <div class="app-container">
-    <SysContainer></SysContainer>
+    <router-view></router-view>
   </div>
 </template>
 
 <script setup lang="ts">
-import SysContainer from '@/Layouts/index.vue';
 </script>

@@ -1,7 +1,7 @@
 import { ipcRenderer } from 'electron';
 
 export default {
-  send(name:string, data:object = {}) {
+  send(name: string, data: { [key: string]: any }) {
     return new Promise((resolve, reject) => {
       ipcRenderer
         .invoke(name, data)
@@ -9,7 +9,7 @@ export default {
         .catch((err) => reject(err));
     });
   },
-  remove(data:string) {
+  remove(data: string) {
     ipcRenderer.removeAllListeners(data);
   },
 };
