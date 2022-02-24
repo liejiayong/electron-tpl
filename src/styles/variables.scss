@@ -1,0 +1,31 @@
+/* 样式归属前缀 */
+$prefix: '.jy';
+
+/* 主要内容宽度 */
+$main-width: 100%;
+$main-width-pc: 1200px;
+$main-widthx-pc: 1000px;
+
+/* color */
+/* 主题色定义 */
+$color-theme-bg: #ce0303; /* 默认主题背景颜色 */
+$color-theme-txt: #fff; /* 默认主题字体颜色,与$color-primary一样 */
+$btn-bg-com: #2d8cec linear-gradient(#3890ea, #2d8cec, #0c6dd0);
+
+/* 默认颜色定义 */
+$color-primary: $color-theme-txt; /* 默认字体颜色 */
+$color-btn-txt: #a70000; /* 默认按钮字体颜色 */
+$color-btn-bg: #ffc949; /* 默认按钮字体颜色 */
+
+$color-yellow: #facb3a;
+$color-orange: #e9852d;
+$color-brown: brown;
+$color-turquoise: #26e4e0;
+$color-green: #cdffa8;
+$color-grey: #666;
+$color-deep-grey: #333;
+$color-red: red;
+$color-pink: pink;
+$color-blue: blue;
+$color-indigo: indigo; // 靛蓝
+$color-purple: purple;

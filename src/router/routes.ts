@@ -5,7 +5,7 @@ import Empty from '@/Layouts/empty.vue';
 export const asyncRouter: RouteRecordRaw[] = [
   {
     path: '/home',
-    component: { template: '<div>控制面板</div>' },
+    component: () => import('@/views/index/index.vue'),
     name: 'Home',
     meta: {
       title: '首页',
@@ -42,6 +42,14 @@ const routes: RouteRecordRaw[] = [
       affix: true,
     },
     children: asyncRouter,
+  },
+  {
+    path: '/login',
+    component: () => import('@/views/auth/login.vue'),
+    name: 'LoginIndex',
+    meta: {
+      title: '登录页',
+    },
   },
 ];
 

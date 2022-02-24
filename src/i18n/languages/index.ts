@@ -4,22 +4,24 @@
  * @Date: 2021-11-29 16:15:29
  */
 
-interface langObj {
-    [key:string]:any
+interface KV {
+  [key: string]: string | number;
+}
+interface langMsg {
+  message: KV;
+}
+export interface langObj {
+  [key: string]: langMsg;
 }
 
-const lang:langObj={}
-export default function localLanguages(){
-    const files = require.context("./", false, /([a-z_]+)\.ts$/i)
-    
-    const language = files.keys().filter(key=>{
-        if (!key.includes('index.ts')){return key}
-    }).reduce((acc,key)=>{
-        const name:string = key.replace(/(.*\/)*([_-\w]+)(\.ts)*$/,'$2') ||'',
-        message:Object = files(key).default
-        acc[name]=message
-        return acc
-    },lang)
+export default function localLanguages(): any {
+  const files = require.context('./', true, /(?<!index)\.ts$/);
+  const language = files.keys().reduce<langObj>((acc, key) => {
+    const name: string = key.replace(/(.*\/)*([_-\w]+)(\.ts)*$/, '$2') || '',
+      message: langMsg = files(key).default;
+    acc[name] = message;
+    return acc;
+  }, {});
 
-return language
+  return language;
 }

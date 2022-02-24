@@ -7,10 +7,10 @@ import i18n from '@/i18n';
  * @returns void
  */
 export default function loadPlugins(app: ReturnType<typeof createApp>): void {
-  const files = require.context('.', true, /'.ts$/);
+  const files = require.context('./', true, /(?<!index)\.ts$/);
   files.keys().forEach((key) => {
     if (typeof files(key).default === 'function') {
-      if (key !== 'index.ts') files(key).default(app);
+      files(key).default(app);
     }
   });
 

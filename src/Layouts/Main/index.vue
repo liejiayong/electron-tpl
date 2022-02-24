@@ -8,6 +8,4 @@
 
 <script setup lang="ts">
 import SelectI18n from '@/components/select/i18n.vue';
-import {useRoute}from 'vue-router'
-console.log(process.env,useRoute())
 </script>

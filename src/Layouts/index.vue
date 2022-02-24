@@ -13,6 +13,11 @@
 <script setup lang="ts">
 import Menu from './Menu/index.vue'
 import Main from './Main/index.vue'
+
+// test
+// import { useRouter } from 'vue-router';
+// const router = useRouter()
+// router.push('/login')
 </script>
 
 <style lang="scss">
