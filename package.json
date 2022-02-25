@@ -15,10 +15,12 @@
   "main": "background.js",
   "dependencies": {
     "@element-plus/icons": "^0.0.11",
+    "axios": "^0.26.0",
     "core-js": "^3.6.5",
     "element-plus": "^2.0.2",
     "eslint-plugin-prettier": "^4.0.0",
     "nedb": "^1.8.0",
+    "pinia": "^2.0.11",
     "upgrade": "^1.1.0",
     "vue": "^3.2.31",
     "vue-global-api": "^0.4.1",

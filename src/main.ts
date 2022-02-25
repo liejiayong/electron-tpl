@@ -2,6 +2,8 @@ import { createApp } from 'vue';
 import loadGlobal from '@/utils/global';
 import loadPlugins from '@/plugins/index';
 import router from '@/router/index';
+import { createPinia } from 'pinia';
+
 import App from './App.vue';
 import '@/styles/global.scss';
 
@@ -10,5 +12,3 @@ const app: ReturnType<typeof createApp> = createApp(App);
 
 loadGlobal(app);
 loadPlugins(app);
-
-app.use(router).mount('#app');
