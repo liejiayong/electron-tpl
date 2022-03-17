@@ -12,3 +12,5 @@ const app: ReturnType<typeof createApp> = createApp(App);
 
 loadGlobal(app);
 loadPlugins(app);
+
+app.use(router).use(createPinia()).mount('#app');
