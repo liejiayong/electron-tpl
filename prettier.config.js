@@ -30,8 +30,10 @@ module.exports = {
   trailingComma: 'es5',
   // Print spaces between brackets in object literals. true Example: { foo: bar }.
   bracketSpacing: true,
+  bracketSameLine: false,
+  // This option has been deprecated in v2.4.0, use --bracket-same-line instead
   // Put the > of a multi-line JSX element at the end of the last line instead of being alone on the next line (does not apply to self closing elements).
-  jsxBracketSameLine: false,
+  // jsxBracketSameLine: false,
   // "always" - Always include parens. Example: (x) => x
   // "avoid" - Omit parens when possible. Example: x => x
   arrowParens: 'always',
