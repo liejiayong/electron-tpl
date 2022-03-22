@@ -3,7 +3,7 @@
   <SelectI18n></SelectI18n>
   <el-button type="primary" :loading="true">Loading</el-button>
   //////////////////////////////////
- <router-view></router-view>
+  <router-view></router-view>
 </template>
 
 <script setup lang="ts">

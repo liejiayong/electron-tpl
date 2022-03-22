@@ -17,7 +17,13 @@ const useUserStore = defineStore('user', {
   state: (): UserState => {
     return {
       token: '',
-      userInfo: null,
+      userInfo: {
+        id: 1,
+        nickname: 'JyLie',
+        name: 'L',
+        avatar: 'https://i.gtimg.cn/club/item/face/img/2/15922_100.gif',
+        isAuth: true,
+      },
     };
   },
   getters: {

@@ -10,8 +10,32 @@ import { createApp } from 'vue';
 // }
 
 /* 按需引入 */
-import { UserFilled, Lock, View } from '@element-plus/icons-vue';
-import { ElIcon, ElButton, ElDropdown, ElDropdownItem, ElDropdownMenu, ElForm, ElInput, ElSelect } from 'element-plus';
+import {
+  UserFilled,
+  Lock,
+  View,
+  Operation,
+  HomeFilled,
+  FullScreen,
+  Refresh,
+  RefreshLeft,
+  RefreshRight,
+  MagicStick,
+  ArrowDown,
+} from '@element-plus/icons-vue';
+import {
+  ElCol,
+  ElRow,
+  ElIcon,
+  ElButton,
+  ElDropdown,
+  ElDropdownItem,
+  ElDropdownMenu,
+  ElForm,
+  ElInput,
+  ElSelect,
+} from 'element-plus';
+import 'element-plus/theme-chalk/display.css';
 
 /**
  * @description 手动注册 ElementPlus 组件,达到按需加载目的
@@ -21,10 +45,24 @@ import { ElIcon, ElButton, ElDropdown, ElDropdownItem, ElDropdownMenu, ElForm, E
  */
 export default function loadComponents(app: ReturnType<typeof createApp>): void {
   // element icon
-  app.config.globalProperties.$icon = { UserFilled, Lock, View };
+  app.config.globalProperties.$icon = {
+    UserFilled,
+    Lock,
+    View,
+    Operation,
+    HomeFilled,
+    FullScreen,
+    Refresh,
+    RefreshLeft,
+    RefreshRight,
+    MagicStick,
+    ArrowDown,
+  };
 
   /* element components */
   app
+    .use(ElCol)
+    .use(ElRow)
     .use(ElButton)
     .use(ElDropdown)
     .use(ElDropdownItem)

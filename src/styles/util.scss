@@ -361,14 +361,17 @@
   left: 0;
 }
 
-.flow_block {
+.jy-block {
   display: block;
 }
-.flow_inline {
+.jy-inline {
   display: inline;
 }
-.flow_inblock {
+.jy-inblock {
   display: inline-block;
+}
+.jy-inflex {
+  display: inline-flex;
 }
 
 .jy-flex {
@@ -502,6 +505,14 @@
   color: $color-btn-txt;
   background-color: $color-btn-bg;
   z-index: 5;
+}
+.jy-btn-inflex {
+  margin-right: 10px;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
 }
 
 .opacity-0 {

@@ -1,20 +1,3 @@
-const INLINE_ELEMENTS = [
-  'img',
-  'span',
-  'small',
-  'select',
-  'strong',
-  'sub',
-  'sup',
-  'textarea',
-  'var',
-  'b',
-  'a',
-  'code',
-  'abbr',
-  'big',
-  'dfn',
-];
 // docs options url: https://prettier.io/docs/en/options.html
 module.exports = {
   printWidth: 120,
@@ -38,21 +21,21 @@ module.exports = {
   // "avoid" - Omit parens when possible. Example: x => x
   arrowParens: 'always',
   /* Range start */
-  rangeStart: 0,
-  rangeEnd: Infinity,
+  // rangeStart: 0,
+  // rangeEnd: Infinity,
   /* Range end */
   // parser:'babylon', /* 默认不打开 */
-  /* 
+  /*
   Specify which parser to use.
 	parser: 'None'|'babel',
 	Specify the file name to use to infer which parser to use.
 	filepath: 'None'|<string>,
 	指定某片段格式化。Prettier can restrict itself to only format files that contain a special comment, called a pragma, at the top of the file.
   */
-  parser: 'typescript',
-  requirePragma: false,
+  // parser: 'typescript',
+  // requirePragma: false,
   // 指定某个文件已被格式化，配合requirePragma使用。Prettier can insert a special @format marker at the top of files specifying that the file has been formatted with prettier.
-  insertPragma: false,
+  // insertPragma: false,
   // 	"always" - Wrap prose if it exceeds the print width.
   // "never" - Do not wrap prose.
   // "preserve" - Wrap prose as-is. First available in v1.9.0
@@ -68,13 +51,13 @@ module.exports = {
   end_with_newline: true,
   // for IDE attriubte end
   // for vue format start
-  'vue/multiline-html-element-content-newline': [
-    'error',
-    {
-      ignoreWhenEmpty: true,
-      ignores: ['pre', 'textarea', ...INLINE_ELEMENTS],
-      allowEmptyLines: false,
-    },
-  ],
+  // 'vue/multiline-html-element-content-newline': [
+  //   'error',
+  //   {
+  //     ignoreWhenEmpty: true,
+  //     ignores: ['pre', 'textarea', ...INLINE_ELEMENTS],
+  //     allowEmptyLines: false,
+  //   },
+  // ],
   // for vue format end
 };

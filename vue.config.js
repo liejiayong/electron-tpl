@@ -18,6 +18,26 @@ module.exports = {
   chainWebpack: (config) => {
     /* alias */
     config.resolve.alias.set('@', path.join(__dirname, 'src'));
+
+    config.module.rule('svg').exclude.add(path.resolve('src/assets/svg')).end();
+    config.module
+      .rule('remixIcon')
+      .test(/\.svg$/)
+      .include.add(path.resolve('src/assets/svg'))
+      .end()
+      .use('svg-sprite-loader')
+      .loader('svg-sprite-loader')
+      .options({ symbolId: 'svg-icon-[name]' })
+      .end();
+    config.module
+      .rule('colorfulIcon')
+      .test(/\.svg$/)
+      .include.add(path.resolve('src/assets/colorful'))
+      .end()
+      .use('svg-sprite-loader')
+      .loader('svg-sprite-loader')
+      .options({ symbolId: 'svg-icon-[name]' })
+      .end();
   },
   css: {
     requireModuleExtension: true,

@@ -1,0 +1,28 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+.sys-container {
+  height: 100vh;
+  overflow: hidden;
+}
+.main-container {
+  background-color: #fff;
+}
+.header-container {
+  height: 55px;
+  .el-col {
+    display: flex;
+    align-items: center;
+    &.lt {
+      justify-content: flex-start;
+    }
+    &.rt {
+      justify-content: flex-end;
+    }
+  }
+}
+.ico-txt {
+  vertical-align: super;
+}
