@@ -14,6 +14,16 @@ export const asyncRouter: RouteRecordRaw[] = [
     },
   },
   {
+    path: '/user',
+    component: () => import('@/views/user/index.vue'),
+    name: 'User',
+    meta: {
+      title: '个人中心',
+      icon: 'user',
+      affix: false,
+    },
+  },
+  {
     path: '/news',
     redirect: 'noRedirect',
     name: 'NewsManagement',
@@ -24,7 +34,7 @@ export const asyncRouter: RouteRecordRaw[] = [
         path: 'notice',
         name: 'NewsNotices',
         component: { template: `() => import('@/views/news/notices')` },
-        meta: { title: '公告管理' },
+        meta: { title: '公告管理', affix: true },
       },
     ],
   },

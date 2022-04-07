@@ -22,6 +22,8 @@ import {
   RefreshRight,
   MagicStick,
   ArrowDown,
+  DArrowLeft,
+  DArrowRight,
 } from '@element-plus/icons-vue';
 import {
   ElCol,
@@ -34,6 +36,12 @@ import {
   ElForm,
   ElInput,
   ElSelect,
+  ElRadio,
+  ElRadioButton,
+  ElRadioGroup,
+  ElColorPicker,
+  ElAffix,
+  ElDrawer,
 } from 'element-plus';
 import 'element-plus/theme-chalk/display.css';
 
@@ -57,6 +65,8 @@ export default function loadComponents(app: ReturnType<typeof createApp>): void 
     RefreshRight,
     MagicStick,
     ArrowDown,
+    DArrowLeft,
+    DArrowRight,
   };
 
   /* element components */
@@ -70,5 +80,11 @@ export default function loadComponents(app: ReturnType<typeof createApp>): void 
     .use(ElIcon)
     .use(ElForm)
     .use(ElInput)
-    .use(ElSelect);
+    .use(ElSelect)
+    .use(ElRadio)
+    .use(ElRadioButton)
+    .use(ElRadioGroup)
+    .use(ElColorPicker)
+    .use(ElAffix)
+    .use(ElDrawer);
 }

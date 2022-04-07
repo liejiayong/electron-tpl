@@ -2,8 +2,8 @@
   <el-dropdown @command="handleCommand">
     <span class="avatar-dropdown">
       <img class="user-avatar" :src="userInfo?.avatar" alt="" />
-      <SvgIcon icon-class="user"></SvgIcon>
       <div class="user-name hidden-sm-and-down">
+        <SvgIcon icon-class="user"></SvgIcon>
         {{ userInfo?.nickname }}
         <el-icon class="el-icon--right"><ArrowDown /></el-icon>
       </div>
@@ -40,7 +40,7 @@ function handleCommand(command: string) {
   }
 }
 function navUserCenter() {
-  router.push('/user/index');
+  router.push('/user');
 }
 function logout() {
   // this.$baseConfirm('您确定要退出' + this.$baseTitle + '吗?', null, async () => {
