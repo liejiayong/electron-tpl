@@ -1,7 +1,7 @@
 <template>
   <el-dropdown @command="onSelect">
     <span class="el-dropdown-link">
-      语言: {{ langLabel }}
+      {{ props.label }}{{ props.symbol }}{{ langLabel }}
       <el-icon class="el-icon--right">
         <arrow-down />
       </el-icon>
@@ -19,6 +19,11 @@
 <script setup lang="ts">
 import { ArrowDown } from '@element-plus/icons';
 import { changeLang, langMap, LangMap } from '@/i18n/index';
+
+const props = defineProps({
+  label: { type: String, default: '' },
+  symbol: { type: String, default: '' },
+});
 
 const langLabel = ref(langMap['zh'].label);
 function onSelect(key: keyof LangMap) {

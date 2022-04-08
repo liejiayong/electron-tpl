@@ -1,5 +1,5 @@
 <template>
-  <el-scrollbar :class="{ 'is-collapse': collapse }">
+  <el-scrollbar height="100%" :class="{ 'is-collapse': collapse }">
     <el-menu @select="selectRouter" mode="vertical">
       <template v-for="route in asyncRouter" :key="`${route.name}-${route.path}`">
         <template v-if="route.children">

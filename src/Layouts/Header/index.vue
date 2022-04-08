@@ -15,6 +15,9 @@
     </el-col>
     <el-col :span="14" class="rt">
       <div class="jy-btn-inflex">
+        <SelectI18n></SelectI18n>
+      </div>
+      <div class="jy-btn-inflex">
         <el-icon :size="24">
           <RefreshRight />
         </el-icon>
@@ -26,6 +29,7 @@
 </template>
 <script setup lang="ts">
 import { useRouter } from 'vue-router';
+import SelectI18n from '@/components/select/i18n.vue';
 import Avatar from '../Avatar/index.vue';
 import Theme from '../Theme/index.vue';
 const appInstance = getCurrentInstance();

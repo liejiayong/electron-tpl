@@ -1,14 +1,11 @@
 html,
 body {
-  margin: 0;
-  height: 100%;
 }
 .sys-container {
   height: 100vh;
   overflow: hidden;
 }
 .main-container {
-  background-color: #fff;
 }
 .header-container {
   height: 55px;
@@ -25,4 +22,19 @@ body {
 }
 .ico-txt {
   vertical-align: super;
+}
+
+.el-header {
+  background: var(--jy-color-white);
+}
+.el-main {
+  margin: var(--el-main-padding);
+  background: var(--jy-color-white);
+}
+.el-aside {
+  background: var(--jy-color-white);
+}
+.el-scrollbar__view,
+.el-menu {
+  height: 100%;
 }
