@@ -29,8 +29,9 @@
 </template>
 <script setup lang="ts">
 import { useRouter } from 'vue-router';
-import { login } from '@/api/auth';
+import useUserStore from '@/store/user';
 const appInstance = getCurrentInstance();
+const userStore = useUserStore();
 
 const { UserFilled, Lock, View } = appInstance?.appContext.config.globalProperties.$icon;
 const passType = ref('password');
@@ -46,8 +47,8 @@ const formModel = reactive({
 const router = useRouter();
 async function onSubmit(): Promise<void> {
   var params = toRaw(formModel);
-  await login(params);
-  router.push('/');
+  await userStore.login(params);
+  router.push({ name: 'AdminIndex' });
 }
 </script>
 <style lang="scss" scoped>

@@ -42,6 +42,11 @@ import {
   ElColorPicker,
   ElAffix,
   ElDrawer,
+  ElLoading,
+  ElDialog,
+  ElNotification,
+  ElMessage,
+  ElMessageBox,
 } from 'element-plus';
 import 'element-plus/theme-chalk/display.css';
 
@@ -86,5 +91,16 @@ export default function loadComponents(app: ReturnType<typeof createApp>): void 
     .use(ElRadioGroup)
     .use(ElColorPicker)
     .use(ElAffix)
-    .use(ElDrawer);
+    .use(ElDrawer)
+    .use(ElLoading)
+    .use(ElDialog)
+    .use(ElNotification)
+    .use(ElMessage)
+    .use(ElMessageBox);
+  // app.config.globalProperties.$notify({
+  //   title: 'Info',
+  //   message: 'This is an info message',
+  //   type: 'info',
+  // });
+  console.log(app.config.globalProperties);
 }

@@ -61,6 +61,10 @@ const routes: RouteRecordRaw[] = [
       title: '登录页',
     },
   },
+  {
+    path: '/*',
+    redirect: '/404',
+  },
 ];
 
 export default routes;

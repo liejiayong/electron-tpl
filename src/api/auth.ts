@@ -1,10 +1,12 @@
-interface Login {
-  user: string;
-  password: string;
-}
+import to from 'await-to-js';
 
-export function login(param: Login): Promise<Login> {
-  return new Promise((resolve) => {
-    resolve(param);
+export async function login(param: IUserForm) {
+  const p: Promise<IUserForm> = new Promise((resolve, reject) => {
+    if (param) {
+      resolve(param);
+    }
+
+    reject('Login error');
   });
+  return to<IUserForm>(p);
 }

@@ -1,5 +1,7 @@
+const ElementPlus = require('unplugin-element-plus/webpack');
 const Components = require('unplugin-vue-components/webpack');
 const { ElementPlusResolver } = require('unplugin-vue-components/resolvers');
+
 const path = require('path');
 
 module.exports = {
@@ -13,6 +15,7 @@ module.exports = {
     /* fixed: `vue-global-api` 全局引入报错 Can’t import the named export xxx from non EcmaScript module (only default export is available) */
     config.module.rules.push({ test: /\.mjs$/, include: /node_modules/, type: 'javascript/auto' });
     /* 支持 ElementPlus */
+    config.plugins.push(ElementPlus());
     config.plugins.push(Components({ resolvers: [ElementPlusResolver()] }));
   },
   chainWebpack: (config) => {
@@ -52,7 +55,7 @@ module.exports = {
           const { resourcePath, rootContext } = loaderContext;
           const relativePath = path.relative(rootContext, resourcePath);
           if (relativePath.replace(/\\/g, '/') !== 'src/styles/variables.scss') {
-            return '@import "~@/styles/variables.scss";' + content;
+            return '@use "~@/styles/variables.scss" as *;' + content;
           }
           return content;
         },

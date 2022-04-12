@@ -1,20 +1,10 @@
+import { h } from 'vue';
 import { defineStore } from 'pinia';
-
-interface IUserInfoProps {
-  id: number;
-  name: string;
-  nickname: string;
-  avatar: string;
-  isAuth: boolean;
-}
-
-interface UserState {
-  token: string | undefined;
-  userInfo: GlobalUtils.Nullable<IUserInfoProps>;
-}
+import { ElNotification } from 'element-plus';
+import { login } from '@/api/auth';
 
 const useUserStore = defineStore('user', {
-  state: (): UserState => {
+  state: (): IUserStore => {
     return {
       token: '',
       userInfo: {
@@ -32,7 +22,27 @@ const useUserStore = defineStore('user', {
     },
   },
   actions: {
-    setToken(token: UserState['token']) {
+    async login(params: IUserForm) {
+      const [err, userInfo] = await login(params);
+      if (err) {
+        ElNotification({
+          title: `温馨提示`,
+          message: h('i', { style: 'color: red' }, '登录接口异常，未正确返回'),
+          type: 'error',
+        });
+        return;
+      }
+
+      const hour = new Date().getHours();
+      const timeTips =
+        hour < 8 ? '早上好' : hour <= 11 ? '上午好' : hour <= 13 ? '中午好' : hour <= 18 ? '下午好' : '晚上好';
+      ElNotification({
+        title: `欢迎登录${userInfo?.user}，${timeTips}`,
+        message: h('i', { style: 'color: back' }, '登录接口异常，未正确返回'),
+        type: 'success',
+      });
+    },
+    setToken(token: IUserStore['token']) {
       this.token = token;
     },
     setUserInfo(info: GlobalUtils.Nullable<IUserInfoProps>) {
