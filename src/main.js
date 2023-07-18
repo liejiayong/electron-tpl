@@ -1,5 +1,12 @@
 import { createApp } from "vue";
-import "./style.css";
+import router from "@/router/index.js";
+import { createPinia } from "pinia";
+import createPlugin from "@/plugins/index.js";
 import App from "./App.vue";
+import "@/styles/index.scss";
+import "virtual:svg-icons-register";
 
-createApp(App).mount("#app");
+const app = createApp(App);
+app.use(router).use(createPinia());
+createPlugin(app);
+app.mount("#app");

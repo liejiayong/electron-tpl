@@ -1,12 +1,18 @@
+import path from "path";
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 
 // import basicSsl from "@vitejs/plugin-basic-ssl";
 import electron from "vite-plugin-electron";
+import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
+import AutoImport from "unplugin-auto-import/vite";
+import Components from "unplugin-vue-components/vite";
+import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 
 // https://vitejs.dev/config/
 export default defineConfig({
 	server: {
+		hmr: true,
 		// host: false,
 		// https: true,
 		proxy: {
@@ -34,8 +40,32 @@ export default defineConfig({
 				},
 			},
 		]),
+		createSvgIconsPlugin({
+			// 指定需要缓存的图标文件夹
+			iconDirs: [path.resolve(process.cwd(), "src/assets/svg")],
+			// 指定symbolId格式
+			symbolId: "icon-[dir]-[name]",
+		}),
+		AutoImport({
+			resolvers: [ElementPlusResolver()],
+		}),
+		Components({
+			resolvers: [ElementPlusResolver()],
+		}),
 	],
 	build: {
 		emptyOutDir: false, // 默认情况下，若 outDir 在 root 目录下，则 Vite 会在构建时清空该目录
+	},
+	resolve: {
+		alias: {
+			"@": path.resolve(__dirname, "src"),
+		},
+	},
+	css: {
+		preprocessorOptions: {
+			scss: {
+				additionalData: `$injectedColor: orange;`,
+			},
+		},
 	},
 });
