@@ -1,11 +1,14 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 
+// import basicSsl from "@vitejs/plugin-basic-ssl";
 import electron from "vite-plugin-electron";
 
 // https://vitejs.dev/config/
 export default defineConfig({
 	server: {
+		// host: false,
+		// https: true,
 		proxy: {
 			"/api": {
 				target: "http://jsonplaceholder.typicode.com",
@@ -16,6 +19,7 @@ export default defineConfig({
 	},
 	plugins: [
 		vue(),
+		// basicSsl(),
 		electron([
 			{
 				// Main-Process entry file of the Electron App.
