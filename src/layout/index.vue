@@ -1,5 +1,5 @@
 <template>
-	<div class="layout-container">
+	<div class="layout-cont">
 		<el-container>
 			<sidebar></sidebar>
 			<el-container>
@@ -24,6 +24,6 @@ import headers from "./header/index.vue";
 import routerTab from "./router-tab/index.vue";
 </script>
 <style lang="scss" scoped>
-.layout-container {
+.layout-cont {
 }
 </style>

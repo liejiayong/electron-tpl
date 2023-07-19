@@ -92,7 +92,7 @@ onMounted(() => {
 		padding: 0 80px 0 40px;
 		position: relative;
 		left: 0;
-		height: 40px;
+		height: var(--base-main-tabs-height);
 		white-space: nowrap;
 		font-size: 0;
 		border-bottom-width: 1px;
@@ -188,8 +188,7 @@ onMounted(() => {
 			border-width: 0 1px 1px 0;
 			display: inline-block;
 			padding: 4px;
-			transform: rotate(135deg);
-			-webkit-transform: rotate(135deg);
+			transform: rotate(135deg) translate(-1px, 1px);
 		}
 	}
 	&-next {
@@ -202,8 +201,7 @@ onMounted(() => {
 			border-width: 0 1px 1px 0;
 			display: inline-block;
 			padding: 4px;
-			transform: rotate(-45deg);
-			-webkit-transform: rotate(-45deg);
+			transform: rotate(-45deg) translate(-1px, -1px);
 		}
 	}
 	&-more {
@@ -216,8 +214,7 @@ onMounted(() => {
 			border-width: 0 1px 1px 0;
 			display: inline-block;
 			padding: 4px;
-			transform: rotate(45deg);
-			-webkit-transform: rotate(45deg);
+			transform: rotate(45deg) translate(-25%, -25%);
 		}
 	}
 	&__down {

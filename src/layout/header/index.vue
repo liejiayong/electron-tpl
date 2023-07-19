@@ -1,5 +1,5 @@
 <template>
-	<el-row class="header-container">
+	<el-row class="header-cont">
 		<el-col :span="12">
 			<button @click="store.app.toggleSidebar()" class="ico-btn-reset ico-btn">
 				<el-icon :size="icoSize"><component :is="icoOperator"></component></el-icon>
@@ -42,7 +42,7 @@ const icoScreen = computed(() => {
 const icoSize = ref(18);
 </script>
 <style lang="scss" scoped>
-.header-container {
+.header-cont {
 	line-height: var(--el-header-height);
 	.ico-btn {
 		padding: 0 20px;

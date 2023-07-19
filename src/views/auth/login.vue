@@ -39,11 +39,12 @@
 	</div>
 </template>
 
-<script lang="ts" setup>
-import { ref, reactive, computed, watch, onMounted } from "vue";
+<script setup>
+import { ref, reactive } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import { Lock as icoLock, User as icoUser } from "@element-plus/icons-vue";
 import { isPassword } from "@/utils/validate";
+import useStore from "@/store";
 
 const validateuserName = (rule, value, callback) => {
 	if ("" == value) {
@@ -60,8 +61,8 @@ const validatePassword = (rule, value, callback) => {
 	}
 };
 const form = reactive({
-	userName: "",
-	password: "",
+	userName: "test",
+	password: "123456",
 });
 const formRule = reactive({
 	userName: [
@@ -80,6 +81,7 @@ const formRule = reactive({
 	],
 });
 
+const store = useStore();
 const routes = useRoute();
 const data = reactive({
 	loading: false,
@@ -99,6 +101,7 @@ function onLogin() {
 		if (valid) {
 			data.loading = true;
 			// await this.$store.dispatch("user/login", form);
+			store.user.token = "0000";
 			const redirect = routes.query.redirect || "";
 			const routerPath = ["/404", "/401", "/login"].includes(redirect) ? "/" : redirect;
 			console.log("login nav to page:", routerPath);

@@ -6,6 +6,7 @@
   "editor.formatOnType": true,
   "editor.formatOnPaste": true,
 	"prettier.enable": true,
+	"typescript.validate.enable": false,
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
