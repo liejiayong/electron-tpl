@@ -5,6 +5,7 @@
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
   "editor.formatOnPaste": true,
+	"prettier.enable": true,
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -28,7 +29,6 @@
     }
   ],
   "eslint.alwaysShowStatus": true,
-  "eslint.packageManager": "yarn",
   "eslint.validate": [
     "javascript",
     "javascriptreact",
@@ -42,6 +42,5 @@
   "eslint.probe": ["javascript", "javascriptreact", "typescript", "typescriptreact", "json", "html", "vue", "markdown"],
   "stylelint.validate": ["css", "less", "postcss", "scss", "sass", "vue"],
   "stylelint.snippet": ["css", "less", "postcss", "scss", "sass", "vue"],
-  "prettier.enable": true,
-  "prettier.prettierPath": "."
+
 }

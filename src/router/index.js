@@ -1,6 +1,8 @@
 import * as VueRouter from "vue-router";
 import { constantRoutes } from "./routes";
+import useStore from "@/store";
 
+const routesWhiteList = ["/login", "/register", "/404", "/401"];
 const isDev = ["dev", "development"].includes(import.meta.env.MODE);
 const routes = [...constantRoutes];
 
@@ -20,6 +22,22 @@ export function resetRouter() {
 const router = createRouter();
 
 router.beforeResolve(async (to, from, next) => {
+	const store = useStore();
+	const hasToken = store.user.token;
+	console.log(store, to);
+	if (hasToken) {
+		if (to.name === "AuthLogin") {
+			next({ path: "/" });
+		} else {
+			next();
+		}
+	} else {
+		if (routesWhiteList.includes(to.path)) {
+			next();
+		} else {
+			next({ name: "AuthLogin", query: { redirect: to.path } });
+		}
+	}
 	next();
 });
 

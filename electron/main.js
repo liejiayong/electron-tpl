@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from "electron";
+import { app, BrowserWindow, session } from "electron";
 import path from "path";
 
 // The built directory structure
@@ -39,11 +39,22 @@ const createWindow = () => {
 	} else {
 		win.loadURL(VITE_DEV_SERVER_URL);
 	}
+
+	if (process.env.NODE_ENV === "development") {
+		// Open the DevTools.
+		winMain.webContents.openDevTools();
+		console.log('path.resolve(process.cwd(), "./plugins/vue3devtool")', path.resolve(process.cwd(), "./plugins/vue3devtool"));
+	}
 };
 
 /*eslint no-unused-vars: "error"*/
 let winMain = null;
-app.whenReady().then(() => {
+app.whenReady().then(async () => {
+	// vue3 devtool
+	if (process.env.NODE_ENV === "development") {
+		session.defaultSession.loadExtension(path.resolve(process.cwd(), "./plugins/vue3devtool"));
+	}
+
 	winMain = createWindow(); // 创建窗口
 	app.on("activate", () => {
 		if (BrowserWindow.getAllWindows().length === 0) winMain = createWindow();
@@ -57,3 +68,7 @@ app.on("window-all-closed", () => {
 		app.quit();
 	}
 });
+
+// require("electron").app.on("ready", () => {
+// 	session.defaultSession.loadExtension(path.resolve(process.cwd(), "../plugins/vue3devtool"));
+// });

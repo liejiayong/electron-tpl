@@ -43,7 +43,8 @@ const miniCls = computed(() => {
 <style lang="scss" scoped>
 .sidebar-container {
 	position: relative;
-	width: 200px;
+	width: var(--el-aside-width, 300px);
+	flex: none;
 	height: 100vh;
 	overflow: hidden;
 	transition: width 0.3s ease-in-out;

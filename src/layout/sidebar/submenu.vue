@@ -4,7 +4,6 @@
 			<el-icon>
 				<component v-if="data?.meta?.elIcon" :is="data.meta.elIcon"></component>
 				<svgicon v-else :name="data?.meta?.icon"></svgicon>
-				<svgicon v-else :name="data?.meta?.icon"></svgicon>
 			</el-icon>
 			<span>{{ data?.meta?.title }}</span>
 		</template>

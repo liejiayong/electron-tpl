@@ -1,5 +1,5 @@
 import Layout from "@/layout/index.vue";
-// import routesAuth from "./modules/auth.js";
+import routesAuth from "./modules/auth.js";
 /**
  * Note: sub-menu only appear when route children.length >= 1
  * Detail see: https://panjiachen.github.io/vue-element-admin-site/guide/essentials/router-and-nav.html
@@ -27,7 +27,7 @@ import Layout from "@/layout/index.vue";
  * all roles can be accessed
  */
 export const constantRoutes = [
-	// ...routesAuth,
+	...routesAuth,
 	{
 		path: "/",
 		component: Layout,
