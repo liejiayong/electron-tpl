@@ -1,5 +1,5 @@
 <template>
-	<div :class="[miniCls]" class="sidebar-container">
+	<div :class="[miniCls]" class="sidebar-cont">
 		<el-aside>
 			<!-- <div class="logo"><img src="@/assets/logo.png" alt="" /></div> -->
 			<el-menu
@@ -12,17 +12,7 @@
 				@open="handleOpen"
 				@close="handleClose"
 			>
-				<template v-for="(m1, i1) in menuRoutes" :key="i1">
-					<template v-if="m1.children && m1.children.length">
-						<submenus :data="m1" :index="i1"></submenus>
-					</template>
-					<template v-else>
-						<el-menu-item v-if="!m1.hidden" :index="i1">
-							<el-icon><icon-menu /></el-icon>
-							<template #title>{{ m1.meta?.title }}</template>
-						</el-menu-item>
-					</template>
-				</template>
+				<sidebar-item v-for="route in menuRoutes" :key="route.path" :item="route" :base-path="route.path" />
 			</el-menu>
 		</el-aside>
 	</div>
@@ -32,16 +22,19 @@
 import { ref, reactive, computed, watch, onMounted } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import { constantRoutes as menuRoutes } from "@/router/routes.js";
-import submenus from "./submenu.vue";
+import SidebarItem from "./SidebarItem.vue";
 import useStore from "@/store";
 const store = useStore();
 const isCollapse = computed(() => !store.app.sidebar.opened);
 const miniCls = computed(() => {
 	return isCollapse.value ? "is-mini" : "";
 });
+console.log("menuRoutes", menuRoutes);
+function handleOpen() {}
+function handleClose() {}
 </script>
 <style lang="scss" scoped>
-.sidebar-container {
+.sidebar-cont {
 	position: relative;
 	width: var(--el-aside-width, 300px);
 	flex: none;
@@ -49,7 +42,7 @@ const miniCls = computed(() => {
 	overflow: hidden;
 	transition: width 0.3s ease-in-out;
 	&.is-mini {
-		width: 60px;
+		width: calc(var(--el-menu-icon-width) + var(--el-menu-base-level-padding) * 2);
 	}
 	:deep(.el-aside) {
 		height: 100%;
@@ -69,6 +62,9 @@ const miniCls = computed(() => {
 			&.is-active {
 				background-color: var(--el-menu-hover-bg-color);
 			}
+		}
+		.el-sub-menu__title {
+			padding-right: 0;
 		}
 	}
 	.logo {

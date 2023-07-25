@@ -72,6 +72,21 @@
 	--base-transition: all 0.3s;
 }
 
+$color-btn-txt: #a70000; // 默认按钮字体颜色
+$color-btn-bg: #ffc949; // 默认按钮字体颜色
+$color-yellow: #facb3a;
+$color-orange: #e9852d;
+$color-brown: brown;
+$color-turquoise: #26e4e0;
+$color-green: #cdffa8;
+$color-grey: #666;
+$color-deep-grey: #333;
+$color-red: red;
+$color-pink: pink;
+$color-blue: blue;
+$color-indigo: indigo; // 靛蓝
+$color-purple: purple;
+
 :export {
 	//菜单文字颜色变量导出
 	menu-color: --base-menu-color;
