@@ -8,6 +8,9 @@ dependencies:
   '@element-plus/icons-vue':
     specifier: ^2.1.0
     version: registry.npmmirror.com/@element-plus/icons-vue@2.1.0(vue@3.3.4)
+  '@tinymce/tinymce-vue':
+    specifier: ^5.1.0
+    version: registry.npmmirror.com/@tinymce/tinymce-vue@5.1.0(vue@3.3.4)
   echarts:
     specifier: ^5.4.3
     version: registry.npmmirror.com/echarts@5.4.3
@@ -17,6 +20,9 @@ dependencies:
   pinia:
     specifier: ^2.1.4
     version: registry.npmmirror.com/pinia@2.1.4(vue@3.3.4)
+  tinymce:
+    specifier: ^6.6.0
+    version: registry.npmmirror.com/tinymce@6.6.0
   vue:
     specifier: ^3.3.4
     version: registry.npmmirror.com/vue@3.3.4
@@ -734,6 +740,18 @@ packages:
     dependencies:
       defer-to-connect: registry.npmmirror.com/defer-to-connect@2.0.1
     dev: true
+
+  registry.npmmirror.com/@tinymce/tinymce-vue@5.1.0(vue@3.3.4):
+    resolution: {integrity: sha512-Z4R8zaOKrAXBhHWsq+qUlwHY+rvze2RgxHDrZ5+qTYkGvRofW5880HLG9gvv6TRPVsNSQBNMdsaOjJ/eueccgA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@tinymce/tinymce-vue/-/tinymce-vue-5.1.0.tgz}
+    id: registry.npmmirror.com/@tinymce/tinymce-vue/5.1.0
+    name: '@tinymce/tinymce-vue'
+    version: 5.1.0
+    peerDependencies:
+      vue: ^3.0.0
+    dependencies:
+      tinymce: registry.npmmirror.com/tinymce@6.6.0
+      vue: registry.npmmirror.com/vue@3.3.4
+    dev: false
 
   registry.npmmirror.com/@tootallnate/once@2.0.0:
     resolution: {integrity: sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@tootallnate/once/-/once-2.0.0.tgz}
@@ -5804,6 +5822,12 @@ packages:
     name: text-table
     version: 0.2.0
     dev: true
+
+  registry.npmmirror.com/tinymce@6.6.0:
+    resolution: {integrity: sha512-b9Mb7z8ryFOwLm8WCmlpwzdgOt1xD1u5Jjdh68B4QjkIyTLyHRBsfsrbiCUGonnVTymDlkexPkaP8sj24zexKQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/tinymce/-/tinymce-6.6.0.tgz}
+    name: tinymce
+    version: 6.6.0
+    dev: false
 
   registry.npmmirror.com/titleize@3.0.0:
     resolution: {integrity: sha512-KxVu8EYHDPBdUYdKZdKtU2aj2XfEx9AfjXxE/Aj0vT06w2icA09Vus1rh6eSu1y01akYg6BjIK/hxyLJINoMLQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/titleize/-/titleize-3.0.0.tgz}

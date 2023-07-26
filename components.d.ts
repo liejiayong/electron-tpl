@@ -7,7 +7,8 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    Auth: typeof import('./src/components/button/auth.vue')['default']
+    Auth: typeof import('./src/components/Button/auth.vue')['default']
+    Editor: typeof import('./src/components/Tinymce/editor.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElBadge: typeof import('element-plus/es')['ElBadge']
     ElButton: typeof import('element-plus/es')['ElButton']
@@ -25,9 +26,10 @@ declare module 'vue' {
     ElMenuItemGroup: typeof import('element-plus/es')['ElMenuItemGroup']
     ElRow: typeof import('element-plus/es')['ElRow']
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
+    IndexVue2: typeof import('./src/components/Tinymce/index-vue2.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    SvgIcon: typeof import('./src/components/icon/svg-icon.vue')['default']
+    SvgIcon: typeof import('./src/components/Icon/svg-icon.vue')['default']
     Tinymce: typeof import('./src/components/Tinymce/index.vue')['default']
   }
 }

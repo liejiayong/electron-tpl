@@ -1,6 +1,6 @@
 <script>
 import { h } from "vue";
-import SvgIcon from "@/components/icon/svg-icon.vue";
+import SvgIcon from "@/components/Icon/svg-icon.vue";
 export default {
 	name: "MenuItem",
 	props: {
