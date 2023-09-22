@@ -10,7 +10,7 @@ const INLINE_ELEMENTS = ["img", "span", "small", "select", "strong", "sub", "sup
 // docs options url: https://prettier.io/docs/en/options.html
 module.exports = {
 	printWidth: 150,
-	tabWidth: 2 /* Specify the number of spaces per indentation-level. */,
+	tabWidth: 4 /* Specify the number of spaces per indentation-level. */,
 	useTabs: true /* Indent lines with tabs instead of spaces. */,
 	// Print semicolons at the ends of statements.
 	semi: true,

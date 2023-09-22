@@ -1,47 +1,46 @@
 {
-  "files.autoSave": "onFocusChange", // 自动保存
-  "files.eol": "\n",
-  "files.enableTrash": false,
-  "editor.formatOnSave": true,
-  "editor.formatOnType": true,
-  "editor.formatOnPaste": true,
-	"prettier.enable": true,
-	"typescript.validate.enable": false,
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.fixAll.tslint": true,
-    "source.fixAll.stylelint": true
-  },
-  "eslint.enable": true,
-  "eslint.format.enable": true,
-  "eslint.run": "onSave",
-  "eslint.codeAction.showDocumentation": {
-    "enable": true
-  },
-  "eslint.workingDirectories": [
-    {
-      "mode": "auto"
-    }
-  ],
-  "eslint.alwaysShowStatus": true,
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "json",
-    "html",
-    "vue",
-    "markdown"
-  ],
-  "eslint.probe": ["javascript", "javascriptreact", "typescript", "typescriptreact", "json", "html", "vue", "markdown"],
-  "stylelint.validate": ["css", "less", "postcss", "scss", "sass", "vue"],
-  "stylelint.snippet": ["css", "less", "postcss", "scss", "sass", "vue"],
+	/* vscode settings */
+	"files.autoSave": "onFocusChange", // 自动保存
+	"files.eol": "\n",
+	"files.enableTrash": false,
+	"editor.formatOnSave": true,
+	"editor.formatOnType": true,
+	"editor.formatOnPaste": true,
+	"editor.codeActionsOnSave": {
+		// 控制插件在文件点击保存是格式化
+		"source.fixAll.eslint": true,
+		"source.fixAll.tslint": true,
+		"source.fixAll.stylelint": true
+	},
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json5]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
 
+	/* typescript */
+	"typescript.validate.enable": false,
+
+	/* prettier */
+	"prettier.enable": true,
+	"prettier.prettierPath": "." /* 当使用node_modules时设置当前目录 "." */,
+
+	/* Eslint */
+	"eslint.enable": true,
+	"eslint.run": "onSave",
+	// "eslint.format.enable": true, // 官方推荐使用editor.codeActionsOnSave来自动格式化
+	"eslint.alwaysShowStatus": true, // Eslint@2.4.0:the setting eslint.alwaysShowStatus got removed since the status is now shown as a language status indicator.
+	"eslint.codeAction.showDocumentation": { "enable": true },
+	"eslint.workingDirectories": [{ "mode": "auto" }],
+	"eslint.probe": ["javascript", "javascriptreact", "typescript", "typescriptreact", "html", "vue", "markdown", "json"] /* 新版本设置 */,
+	"eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact", "html", "vue", "markdown", "json"] /* 旧版本设置 */,
+
+	/* Stylelint */
+	"stylelint.enable": true,
+	"stylelint.validate": ["css", "less", "postcss", "scss", "sass", "vue"],
+	"stylelint.snippet": ["css", "less", "postcss", "scss", "sass", "vue"]
 }

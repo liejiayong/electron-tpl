@@ -6,4 +6,4 @@ dist-electron
 release
 
 # Ignore all HTML files:
-*.html
+# *.html
