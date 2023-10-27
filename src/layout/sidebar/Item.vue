@@ -1,6 +1,7 @@
 <script>
 import { h } from "vue";
 import SvgIcon from "@/components/Icon/svg-icon.vue";
+import { ElIcon } from "element-plus";
 export default {
 	name: "MenuItem",
 	props: {
@@ -16,13 +17,15 @@ export default {
 	render(props) {
 		const { icon, title } = props;
 		const vnodes = [];
-		console.log("props", icon, title);
 		if (icon) {
+			let ico = null;
 			if (icon.includes("el-icon")) {
-				vnodes.push(h("i", { className: [icon, "el-icon"] }));
+				ico = h("i", { className: [icon, "el-icon"] });
 			} else {
-				vnodes.push(h(SvgIcon, { name: icon, className: "el-icon" }));
+				ico = h(SvgIcon, { name: icon, className: "el-icon" });
 			}
+			const menuIco = h(ElIcon, { className: "menu__icon" }, ico);
+			vnodes.push(menuIco);
 		}
 
 		if (title) {
@@ -35,11 +38,19 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .sub-el-icon {
 	margin-right: 5px;
 	width: 1em;
 	height: 1em;
 	color: currentColor;
+}
+.menu__icon {
+	margin-right: 1em;
+	min-width: 1.25em;
+	.el-icon {
+		margin: 0;
+		font-size: inherit;
+	}
 }
 </style>

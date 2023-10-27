@@ -27,7 +27,7 @@ import useStore from "@/store";
 const store = useStore();
 const isCollapse = computed(() => !store.app.sidebar.opened);
 const miniCls = computed(() => {
-	return isCollapse.value ? "is-mini" : "";
+	return isCollapse.value ? "is__mini" : "";
 });
 console.log("menuRoutes", menuRoutes);
 function handleOpen() {}
@@ -41,8 +41,14 @@ function handleClose() {}
 	height: 100vh;
 	overflow: hidden;
 	transition: width 0.3s ease-in-out;
-	&.is-mini {
+	&.is__mini {
 		width: calc(var(--el-menu-icon-width) + var(--el-menu-base-level-padding) * 2);
+		:deep(.el-menu-item) {
+			span {
+				opacity: 0;
+				visibility: hidden;
+			}
+		}
 	}
 	:deep(.el-aside) {
 		height: 100%;

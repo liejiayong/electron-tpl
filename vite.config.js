@@ -8,6 +8,9 @@ import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
+import { viteMockServe } from "vite-plugin-mock";
+
+const isProduction = process.env.NODE_ENV === "production";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -52,6 +55,19 @@ export default defineConfig({
 		Components({
 			resolvers: [ElementPlusResolver()],
 		}),
+		viteMockServe({
+			ignore: /^_/,
+			mockPath: "mock", // 解析根目录下的mock文件夹
+			watchFiles: true, // 监视文件更改
+			enabled: !isProduction, // 开发打包开关
+			//supportTs: false, // 打开后，可以读取 ts 文件模块。 请注意，打开后将无法监视.js 文件
+			// // 这样可以控制关闭mock的时候不让mock打包到最终代码内
+			// injectCode: `
+			//   import { setupProdMockServer } from '../mock/_createProductionServer'
+			//   setupProdMockServer()
+			//   `,
+			logger: false, // 是否在控制台显示请求日志
+		}),
 	],
 	build: {
 		emptyOutDir: false, // 默认情况下，若 outDir 在 root 目录下，则 Vite 会在构建时清空该目录
@@ -65,7 +81,7 @@ export default defineConfig({
 	css: {
 		preprocessorOptions: {
 			scss: {
-				additionalData: `$injectedColor: orange;`,
+				// additionalData: `@use "@/styles/index.scss" as *; `,
 			},
 		},
 	},

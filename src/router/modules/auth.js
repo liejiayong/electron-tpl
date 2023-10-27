@@ -6,6 +6,13 @@ export default [
 		hidden: true,
 		meta: { title: "登录页", icon: "" },
 	},
+	{
+		path: "/user",
+		name: "AuthUser",
+		component: () => import("@/views/auth/profile.vue"),
+		hidden: true,
+		meta: { title: "个人中心", icon: "" },
+	},
 
 	// {
 	// 	path: "/404",

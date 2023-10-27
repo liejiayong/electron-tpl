@@ -83,6 +83,7 @@ const formRule = reactive({
 
 const store = useStore();
 const routes = useRoute();
+const router = useRouter();
 const data = reactive({
 	loading: false,
 	passwordType: "password",
@@ -95,17 +96,12 @@ function onShowPwd() {
 	});
 }
 const $form = ref();
-const router = useRouter();
 function onLogin() {
 	$form.value.validate(async (valid) => {
 		if (valid) {
 			data.loading = true;
-			// await this.$store.dispatch("user/login", form);
-			store.user.token = "0000";
-			const redirect = routes.query.redirect || "";
-			const routerPath = ["/404", "/401", "/login"].includes(redirect) ? "/" : redirect;
-			console.log("login nav to page:", routerPath);
-			await router.push(routerPath);
+			await store.user.login();
+
 			data.loading = false;
 		} else {
 			return false;

@@ -24,7 +24,7 @@ const router = createRouter();
 router.beforeResolve(async (to, from, next) => {
 	const store = useStore();
 	const hasToken = store.user.token;
-	console.log(store, to);
+	console.log("router before", store, to);
 	if (hasToken) {
 		if (to.name === "AuthLogin") {
 			next({ path: "/" });

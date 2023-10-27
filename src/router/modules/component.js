@@ -5,7 +5,7 @@ export default {
 	// redirect: "noRedirect",
 	component: Layout,
 	name: "Component",
-	meta: { title: "常用组件", icon: "component" },
+	meta: { title: "常用组件", icon: "example" },
 	children: [
 		{
 			path: "tinymce",
@@ -13,18 +13,18 @@ export default {
 			name: "TinymceDemo",
 			meta: { title: "Tinymce" },
 		},
-		// {
-		// 	path: "base",
-		// 	name: "Base",
-		// 	component: () => import("@/layout/template.vue"),
-		// 	meta: { title: "基础组件", icon: "table" },
-		// },
-		// {
-		// 	path: "advance",
-		// 	name: "Advance",
-		// 	component: () => import("@/layout/template.vue"),
-		// 	meta: { title: "进阶组件", icon: "tree" },
-		// },
+		{
+			path: "base",
+			name: "Base",
+			component: () => import("@/views/plugin-demo/base.vue"),
+			meta: { title: "基础组件", icon: "table" },
+		},
+		{
+			path: "advance",
+			name: "Advance",
+			component: () => import("@/views/plugin-demo/advance.vue"),
+			meta: { title: "进阶组件", icon: "tree" },
+		},
 		// {
 		// 	path: "model",
 		// 	name: "Model",

@@ -1,6 +1,6 @@
 <template>
 	<div v-if="isExternal" :style="styleExternalIcon" class="svg-external-icon svg-icon" />
-	<svg v-else :class="svgClass" aria-hidden="true">
+	<svg v-else :class="svgClass" aria-hidden="true" class="svg-icon">
 		<use :xlink:href="symbolId" />
 	</svg>
 </template>
@@ -64,9 +64,9 @@ export default {
 	overflow: hidden;
 	fill: currentColor;
 }
-.svg-icon:hover {
+/* .svg-icon:hover {
 	opacity: 0.8;
-}
+} */
 
 .svg-external-icon {
 	display: inline-block;
